@@ -1,0 +1,215 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 1400px;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+    font-size: 3rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.subtitle {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+.clocks-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+    padding: 20px;
+}
+
+.clock-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.clock-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
+    background: rgba(255, 255, 255, 1);
+}
+
+.timezone-name {
+    color: #667eea;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    letter-spacing: 1px;
+}
+
+.timezone-time {
+    font-size: 2.8rem;
+    color: #333;
+    font-weight: 300;
+    font-family: 'Courier New', monospace;
+    letter-spacing: 3px;
+    margin-bottom: 8px;
+    line-height: 1;
+}
+
+.timezone-time .milliseconds {
+    font-size: 1.5rem;
+    color: #764ba2;
+    margin-left: 8px;
+}
+
+.timezone-date {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.timezone-day {
+    font-size: 0.9rem;
+    color: #999;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.timezone-offset {
+    display: inline-block;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .clocks-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.8rem;
+        margin-bottom: 8px;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+        margin-bottom: 30px;
+    }
+
+    .clocks-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .clock-card {
+        padding: 20px;
+    }
+
+    .timezone-name {
+        font-size: 1.1rem;
+    }
+
+    .timezone-time {
+        font-size: 2.2rem;
+        letter-spacing: 2px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem;
+        margin-bottom: 5px;
+    }
+
+    .subtitle {
+        font-size: 0.9rem;
+        margin-bottom: 20px;
+    }
+
+    .clocks-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        padding: 10px;
+    }
+
+    .clock-card {
+        padding: 18px;
+    }
+
+    .timezone-time {
+        font-size: 1.8rem;
+        letter-spacing: 1px;
+    }
+
+    .timezone-name {
+        font-size: 1rem;
+    }
+}
+
+/* Animation for smooth appearance */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.clock-card {
+    animation: slideIn 0.5s ease forwards;
+}
+
+.clock-card:nth-child(1) { animation-delay: 0.1s; }
+.clock-card:nth-child(2) { animation-delay: 0.2s; }
+.clock-card:nth-child(3) { animation-delay: 0.3s; }
+.clock-card:nth-child(4) { animation-delay: 0.4s; }
+.clock-card:nth-child(5) { animation-delay: 0.5s; }
+.clock-card:nth-child(6) { animation-delay: 0.6s; }
+.clock-card:nth-child(7) { animation-delay: 0.7s; }
+.clock-card:nth-child(8) { animation-delay: 0.8s; }
+.clock-card:nth-child(9) { animation-delay: 0.9s; }
+.clock-card:nth-child(10) { animation-delay: 1s; }
+.clock-card:nth-child(11) { animation-delay: 1.1s; }
+.clock-card:nth-child(12) { animation-delay: 1.2s; }
